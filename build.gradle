@@ -43,6 +43,11 @@ test {
 
 createReleaseTag.dependsOn uploadArchives
 
+task publish(type: GradleBuild, dependsOn: 'test') {           
+    buildFile = 'publish.gradle'
+    tasks = ['publishGhPages']
+}
+
 modifyPom {
     project {
         name 'concordion-excel-extension'

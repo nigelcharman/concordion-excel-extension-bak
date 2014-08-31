@@ -1,0 +1,18 @@
+buildscript {
+  repositories {
+      jcenter()
+  }
+
+  dependencies {
+    classpath 'org.ajoberstar:gradle-git:0.9+'     
+  }
+}
+
+apply plugin: 'github-pages'                        
+
+githubPages {
+  repoUri = 'git@github.com:nigelcharman/concordion-excel-extension.git'      
+  pages {
+     from './build/reports/spec/spec/concordion/ext/excel'
+  }
+}
